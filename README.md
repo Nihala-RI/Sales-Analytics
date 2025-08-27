@@ -1,51 +1,65 @@
-# 📊 Sales Analytics Dashboard – Excel  
+# 📊 Sales Analytics Project – AtliQ Hardware
 
-## 📌 Project Overview  
-This project showcases an interactive **Sales Analytics Dashboard** built in Excel for *AtliQ Hardware*, a hardware company serving customers like **Croma, Flipkart, Amazon**, and others.  
-The dashboard provides insights into customer performance, year-over-year (YoY) sales growth, and market performance against targets.  
-
----
-
-## ⚙️ Tools & Techniques Used  
-- Excel: Power Query, Power Pivot, Pivot Tables  
-- Data Modeling: Star schema, Snowflake schema  
-- DAX Measures: Net Sales (2019–2021), YoY Growth, Variance %  
-- Visualization: Conditional Formatting, Slicers, Interactive Pivot Tables  
+## 📌 Project Overview
+This project analyzes sales performance of **AtliQ Hardware**, a hardware company with customers such as **Croma, Flipkart, and Amazon**.  
+The solution was built using **Excel (Power Query, Power Pivot, DAX, Conditional Formatting)** to generate insightful dashboards.
 
 ---
 
-## 🗂️ Data Sources  
-- **Fact Table**: Sales  
-- **Dimension Tables**: Customer, Product, Market, Date (custom-built in Power Query)  
-- **Target Table**: Market-wise targets for 2019–2021  
+## 🔧 Tools & Techniques Used
+- **Power Query** → Data cleaning & transformation (promoting headers, changing datatypes, creating fiscal year logic).  
+- **Power Pivot & Data Model** → Star schema modeling with Fact & Dimension tables.  
+- **DAX & Measures** → Net Sales calculations, YOY growth, Target achievement.  
+- **Conditional Formatting** → Data bars, 3-color scales for performance tracking.  
 
 ---
 
-## 🔑 Key Steps  
-1. Data cleaning & transformation in **Power Query**.  
-2. Created a **Date Dimension Table** with fiscal year logic (Sep–Aug).  
-3. Modeled tables in **Power Pivot** (star schema).  
-4. Built **DAX measures** for yearly Net Sales, YoY growth, and Market vs Target % variance.  
-5. Designed interactive dashboards with **slicers** and **conditional formatting**.  
+## 📂 Data Model
+- **Fact Table:** Sales  
+- **Dimension Tables:** Customer, Product, Market, Date  
+- Created a **Date Dimension Table** in Power Query with fiscal year logic:  
+
+```DAX
+Date.Year(Date.AddMonths([Date],4))
+```
+
+*(Fiscal year: September → August)*  
+
+- Implemented **Star Schema** with relationships in Data Model.  
 
 ---
 
-## 📸 Dashboard Preview  
+## 📈 Reports & Insights
 
-**Customer Performance View**  
-![Customer Performance Dashboard](mockup_views/mockup_view_1.png)  
+### 1. Customer Performance Report
+- Measures:  
+  - `2019 Net Sales`  
+  - `2020 Net Sales`  
+  - `2021 Net Sales`  
+  - `YOY Growth (20 vs 21)` → `(21 NS - 20 NS) / 20 NS`  
+- Added slicers for **Region, Market, Division**.  
+- Applied conditional formatting:  
+  - **3-color scale** for Net Sales (2019–2021).  
+  - **Data bars** for YOY % change.  
 
-**Market Performance vs Target View**  
-![Market Performance vs Target Dashboard](mockup_views/mockup_view_2.png)  
+### 2. Market Performance vs Target
+- Imported Market Target Table with **2019, 2020, 2021, and 21–Target %**.  
+- Joined into data model & modified relationships.  
+- Replaced `20 vs 21 %` with `2021–Target` and `% Achievement vs Target`.  
 
 ---
 
-## 📈 Key Insights  
-- Customer-wise sales performance across 2019–2021.  
-- Year-over-Year growth trends.  
-- Market performance compared against business targets.  
+## 🖼️ Mockup Views
+### Customer Performance Dashboard
+![Customer Performance](mockup_views/cus_perfo_rep.png)
+
+### Market Performance vs Target Dashboard
+![Market vs Target](mockup_views/market_per_vs_tar.png)
 
 ---
 
-## 🎯 Outcome  
-Delivered a dynamic Excel-based Sales Analytics solution with interactive filters, YoY analysis, and target vs actual comparisons — enabling AtliQ Hardware to monitor customer and market performance effectively.  
+## 🚀 Key Learnings
+- Data modeling with **Star Schema & Snowflake Schema**.  
+- Creating **Fiscal Year-based analysis** in Power Query.  
+- Using **DAX measures** for dynamic YOY and Target KPIs.  
+- Building interactive Excel dashboards with slicers & formatting.  
