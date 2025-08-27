@@ -33,10 +33,10 @@ The dashboard provides insights into customer performance, year-over-year (YoY) 
 ## 📸 Dashboard Preview  
 
 **Customer Performance View**  
-![Customer Performance Dashboard](mockup views/mockup view 1.png)  
+![Customer Performance Dashboard](mockup_views/mockup_view_1.png)  
 
 **Market Performance vs Target View**  
-![Market Performance vs Target Dashboard](mockup views/mockup view 2.png)  
+![Market Performance vs Target Dashboard](mockup_views/mockup_view_2.png)  
 
 ---
 
